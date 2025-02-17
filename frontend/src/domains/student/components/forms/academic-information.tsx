@@ -95,8 +95,10 @@ export const AcademicInformation = () => {
           />
         </FormControl>
         <Box>
-          <TextField
-            {...register('roll')}
+        <TextField
+            {...register('roll', { valueAsNumber: true })} 
+            type='number'
+            inputProps={{ min: 1 }} 
             error={Boolean(errors.roll)}
             helperText={errors.roll?.message}
             label='Roll'
